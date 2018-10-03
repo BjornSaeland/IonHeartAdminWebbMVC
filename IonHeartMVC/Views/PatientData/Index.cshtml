@@ -1,0 +1,281 @@
+﻿@model IEnumerable<IonHeartMVC.App_Data.PatientData>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+@foreach (var item in Model)
+{
+    <p>
+        @Html.ActionLink("Editera", "Edit", new { id = item.UserId })
+    </p>
+    <p>
+        @Html.ActionLink("Ta Bort", "Delete", new { id = item.UserId })
+    </p>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CalendarDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.CalendarDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Heartrate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.Heartrate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeartrateComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.HeartrateComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.WeightComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Length)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.Length)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LengthComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.LengthComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WellBeing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.WellBeing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WellBeingComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.WellBeingComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.Notes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreathFrequency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.BreathFrequency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BreathFrequencyComment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.BreathFrequencyComment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EKG)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.EKG)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FluidBody)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.FluidBody)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FluidLungs)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.FluidLungs)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodPressure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.BloodPressure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BloodOxygen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => item.BloodOxygen)
+        </dd>
+
+    </dl>
+}
+
+
+
+@*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CalendarDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Heartrate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HeartrateComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WeightComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LengthComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WellBeing)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WellBeingComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BreathFrequency)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BreathFrequencyComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EKG)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FluidBody)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FluidLungs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BloodPressure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BloodOxygen)
+            </th>
+            <th></th>
+        </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CalendarDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Heartrate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HeartrateComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WeightComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LengthComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WellBeing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WellBeingComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BreathFrequency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BreathFrequencyComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EKG)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FluidBody)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FluidLungs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodPressure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BloodOxygen)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.UserId }) |
+                @Html.ActionLink("Details", "Details", new { id=item.UserId }) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.UserId })
+            </td>
+        </tr>
+    }
+
+    </table>*@
